@@ -1,1 +1,313 @@
+/* Importing the Google Fonts */
+/* Nosifier for titles (Horror/Spooky Vibe) */
+/* Creepster for the studio name subtitle (Broken/Handwriting Vibe) */
+@import url('https://fonts.googleapis.com/css2?family=Nosifier:wght@400;700&family=Creepster&display=swap');
+
+/* --- General Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text for contrast */
+    font-family: Arial, sans-serif; /* Fallback font */
+    line-height: 1.6;
+}
+
+a {
+    color: #ff0000; /* Red link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #e6e6e6;
+}
+
+/* --- Typography (Horror Vibe) --- */
+.section-title, .era-title {
+    font-family: 'Nosifier', cursive;
+    color: #ff0000; /* Red titles */
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+.studio-subtitle {
+    font-family: 'Creepster', cursive; /* Broken/Handwriting effect */
+    color: #e6e6e6;
+    font-size: 1.5em;
+    display: block;
+    line-height: 1;
+    margin-top: -10px;
+    text-shadow: 1px 1px 0 #ff0000; /* Simple broken/shadow effect */
+}
+
+/* --- Header and Navigation --- */
+.main-header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 20px 50px;
+}
+
+.logo-and-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.studio-name {
+    text-align: left;
+    line-height: 1;
+}
+
+.era-title {
+    font-size: 2.5em;
+    display: block;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    font-family: 'Nosifier', cursive;
+    color: #fff;
+    font-size: 1.2em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav ul li a:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url('placeholder-dark-background.jpg'); /* Use a dark, horror-themed background image here */
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 100px; /* Space for the header */
+}
+
+/* Simplified Target Graphic */
+.target-graphic {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translate(0, -50%);
+    width: 150px;
+    height: 150px;
+    border: 5px solid #ff0000;
+    border-radius: 50%;
+    background-image: radial-gradient(circle at center, #ff0000 0, rgba(255,0,0,0) 10px, rgba(255,0,0,0.5) 12px, transparent 15px);
+}
+.target-graphic::before,
+.target-graphic::after {
+    content: '';
+    position: absolute;
+    background-color: #ff0000;
+}
+.target-graphic::before {
+    width: 100%;
+    height: 5px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.target-graphic::after {
+    width: 5px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* --- Section Styling --- */
+section {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Opinion/Feedback Section --- */
+.opinion-section {
+    text-align: center;
+    background-color: #111; /* Slightly lighter black for contrast */
+}
+
+.opinion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.opinion-form input[type="text"],
+.opinion-form input[type="email"],
+.opinion-form textarea {
+    padding: 15px;
+    background-color: #000;
+    border: 1px solid #ff0000;
+    color: #fff;
+    font-size: 1em;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.opinion-form button {
+    background-color: #ff0000;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-family: 'Nosifier', cursive;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.opinion-form button:hover {
+    background-color: #cc0000;
+}
+
+
+/* --- Photo Gallery (UI like Video Gallery from image) --- */
+.photo-gallery-section {
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.gallery-item {
+    background-color: #111;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #333;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.view-all-btn {
+    background-color: transparent;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    padding: 10px 40px;
+    cursor: pointer;
+    font-family: 'Nosifier', cursive;
+    font-size: 1.1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view-all-btn:hover {
+    background-color: #ff0000;
+    color: #000;
+}
+
+/* --- About Us Section --- */
+.about-us-section {
+    text-align: center;
+    padding-top: 50px;
+    border-top: 1px solid #222;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.read-more-btn {
+    background-color: #ff0000;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Social Icons */
+.social-handles {
+    margin-top: 30px;
+}
+
+.social-handles a {
+    font-size: 2em;
+    margin: 0 10px;
+    color: #ff0000;
+    transition: color 0.3s;
+}
+
+.social-handles a:hover {
+    color: #fff;
+}
+
+/* --- Happy Customers --- */
+.happy-customers-section {
+    background-color: #111;
+    border-top: 1px solid #333;
+}
+
+.customer-reviews {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.review-box {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    padding: 20px;
+    border: 1px solid #ff0000;
+    background-color: #0a0a0a;
+    text-align: center;
+}
+
+.customer-name {
+    margin-top: 10px;
+    color: #ff0000;
+    font-weight: bold;
+    font-family: 'Nosifier', cursive;
+}
 

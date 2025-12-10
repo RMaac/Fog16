@@ -1,9 +1,12 @@
-/* Importing the new Google Fonts */
-/* Metal Mania for titles (Broken/Heavy Vibe) */
-/* Kalam for the studio name subtitle (Handwriting Vibe) */
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Kalam:wght@400;700&display=swap');
 
-/* --- General Styles --- */
+/* Define the dark red color variable */
+:root {
+    --dark-red: #B00000; 
+    --dark-red-hover: #8B0000;
+}
+
+/* --- General Styles and Full Background --- */
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +14,20 @@
 }
 
 body {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text for contrast */
-    font-family: Arial, sans-serif; /* Fallback font */
+    background-color: #000; /* Ensure body is the darkest base */
+    color: #fff;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    
+    /* Apply single, fixed background image to the entire body */
+    background-image: url('placeholder-dark-background.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* Ensures the image stays in place when scrolling */
+    background-position: center;
 }
 
 a {
-    color: #ff0000; /* Red link color */
+    color: var(--dark-red);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -27,15 +36,15 @@ a:hover {
     color: #e6e6e6;
 }
 
-/* --- Typography (New Horror Vibe) --- */
+/* --- Typography (Horror Vibe) --- */
 .section-title, .era-title, .main-nav ul li a {
-    font-family: 'Metal Mania', cursive; /* Broken/Heavy Font */
-    color: #ff0000; /* Red titles */
+    font-family: 'Metal Mania', cursive;
+    color: var(--dark-red);
     text-align: center;
     font-size: 3em;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced margin */
     letter-spacing: 2px;
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+    text-shadow: 0 0 5px rgba(176, 0, 0, 0.7);
 }
 
 .era-title {
@@ -43,13 +52,13 @@ a:hover {
 }
 
 .studio-subtitle {
-    font-family: 'Kalam', cursive; /* Legible Handwriting effect */
+    font-family: 'Kalam', cursive;
     color: #e6e6e6;
     font-size: 1.5em;
     display: block;
     line-height: 1;
     margin-top: -10px;
-    text-shadow: 1px 1px 0 #ff0000;
+    text-shadow: 1px 1px 0 var(--dark-red);
 }
 
 /* --- Header and Navigation --- */
@@ -97,40 +106,40 @@ a:hover {
 }
 
 .main-nav ul li a:hover {
-    color: #ff0000;
-    border-color: #ff0000;
+    color: var(--dark-red);
+    border-color: var(--dark-red);
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section (Reduced Height) --- */
 .hero-section {
     position: relative;
-    height: 100vh;
-    background-image: url('placeholder-dark-background.jpg'); 
-    background-size: cover;
-    background-position: center top;
+    height: 100vh; /* Keep 100vh for the initial top view */
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding-top: 100px;
 }
 
-/* * The target-graphic class has been removed from this CSS. 
- * You should also remove the corresponding HTML element: 
- * <div class="target-graphic"></div> from your index.html hero section.
- */
-
-
-/* --- Section Styling --- */
+/* --- Section Styling (Reduced Padding and Uniform Dark Background) --- */
 section {
-    padding: 80px 50px;
+    padding: 40px 50px; /* Reduced vertical padding */
     max-width: 1200px;
     margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: Slightly opaque black for readability over complex BG */
 }
+
+/* Ensure background sections are just #000 (transparent to body BG) */
+.opinion-section, 
+.photo-gallery-section,
+.about-us-section {
+    background-color: transparent; 
+}
+
 
 /* --- Opinion/Feedback Section --- */
 .opinion-section {
     text-align: center;
-    background-color: #111;
+    padding-bottom: 60px; /* Add extra padding at the bottom for separation */
 }
 
 .opinion-form {
@@ -145,8 +154,8 @@ section {
 .opinion-form input[type="email"],
 .opinion-form textarea {
     padding: 15px;
-    background-color: #000;
-    border: 1px solid #ff0000;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker input fields */
+    border: 1px solid var(--dark-red);
     color: #fff;
     font-size: 1em;
     font-family: inherit;
@@ -154,7 +163,7 @@ section {
 }
 
 .opinion-form button {
-    background-color: #ff0000;
+    background-color: var(--dark-red);
     color: #000;
     border: none;
     padding: 15px 30px;
@@ -165,24 +174,25 @@ section {
 }
 
 .opinion-form button:hover {
-    background-color: #cc0000;
+    background-color: var(--dark-red-hover);
 }
 
 
-/* --- Photo Gallery (UI like Video Gallery from image) --- */
+/* --- Photo Gallery --- */
 .photo-gallery-section {
     text-align: center;
+    padding-top: 20px; /* Reduced top padding */
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 30px;
+    gap: 20px; /* Reduced gap */
+    margin-bottom: 20px; /* Reduced margin */
 }
 
 .gallery-item {
-    background-color: #111;
+    background-color: rgba(17, 17, 17, 0.5); /* Slightly darker container */
     overflow: hidden;
     position: relative;
     border: 2px solid #333;
@@ -201,8 +211,8 @@ section {
 
 .view-all-btn {
     background-color: transparent;
-    color: #ff0000;
-    border: 2px solid #ff0000;
+    color: var(--dark-red);
+    border: 2px solid var(--dark-red);
     padding: 10px 40px;
     cursor: pointer;
     font-family: 'Metal Mania', cursive;
@@ -211,24 +221,24 @@ section {
 }
 
 .view-all-btn:hover {
-    background-color: #ff0000;
+    background-color: var(--dark-red);
     color: #000;
 }
 
 /* --- About Us Section --- */
 .about-us-section {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 40px; 
     border-top: 1px solid #222;
 }
 
 .about-content {
     max-width: 800px;
-    margin: 0 auto 30px;
+    margin: 0 auto 20px; /* Reduced margin */
 }
 
 .read-more-btn {
-    background-color: #ff0000;
+    background-color: var(--dark-red);
     color: #000;
     border: none;
     padding: 10px 20px;
@@ -239,51 +249,21 @@ section {
 }
 
 .read-more-btn:hover {
-    background-color: #cc0000;
+    background-color: var(--dark-red-hover);
 }
 
 /* Social Icons */
 .social-handles {
-    margin-top: 30px;
+    margin-top: 20px; /* Reduced margin */
 }
 
 .social-handles a {
     font-size: 2em;
     margin: 0 10px;
-    color: #ff0000;
+    color: var(--dark-red);
     transition: color 0.3s;
 }
 
 .social-handles a:hover {
     color: #fff;
-}
-
-/* --- Happy Customers --- */
-.happy-customers-section {
-    background-color: #111;
-    border-top: 1px solid #333;
-}
-
-.customer-reviews {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.review-box {
-    flex: 1;
-    min-width: 250px;
-    max-width: 350px;
-    padding: 20px;
-    border: 1px solid #ff0000;
-    background-color: #0a0a0a;
-    text-align: center;
-}
-
-.customer-name {
-    margin-top: 10px;
-    color: #ff0000;
-    font-weight: bold;
-    font-family: 'Metal Mania', cursive;
 }
